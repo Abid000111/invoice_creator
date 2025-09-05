@@ -1,112 +1,132 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Invoice Printer</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="app">
-    <section class="controls">
-      <div class="brand-fixed">
-        <h1 id="brandName">Your Brand Name</h1>
-        <h2 id="brandDetails">123 Shop Address, City - Mobile: 01234567890</h2>
-      </div>
-
-      <form id="orderForm" autocomplete="off">
-        <div class="row">
-          <label for="orderDate">Order Date</label>
-          <input type="date" id="orderDate" required>
-        </div>
-        <div class="row">
-          <label for="invoiceNumber">Invoice Number</label>
-          <input type="text" id="invoiceNumber" placeholder="INV-0001" required>
-        </div>
-        <div class="row">
-          <label for="customerName">Customer Name</label>
-          <input type="text" id="customerName" placeholder="Customer Name" required>
-        </div>
-        <div class="row">
-          <label for="customerNumber">Customer Number</label>
-          <input type="tel" id="customerNumber" placeholder="01XXXXXXXXX">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Invoice Printer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <section class="controls">
+        <div class="brand-fixed">
+          <h1 id="brandName">Your Brand Name</h1>
+          <h2 id="brandDetails">
+            123 Shop Address, City - Mobile: 01234567890
+          </h2>
         </div>
 
-        <div class="items">
-          <div class="items-header">
-            <span>Item</span>
-            <span>Qty</span>
-            <span>Price</span>
-            <span>Total</span>
+        <form id="orderForm" autocomplete="off">
+          <div class="row">
+            <label for="orderDate">Order Date</label>
+            <input type="date" id="orderDate" required />
           </div>
-          <div id="itemRows"></div>
-          <button type="button" id="addItem">Add Item</button>
-        </div>
-
-        <div class="totals">
-          <div class="row small">
-            <label for="grandTotal">Grand Total</label>
-            <input type="text" id="grandTotal" readonly>
+          <div class="row">
+            <label for="invoiceNumber">Invoice Number</label>
+            <input
+              type="text"
+              id="invoiceNumber"
+              placeholder="INV-0001"
+              required
+            />
           </div>
-        </div>
-
-        <div class="actions">
-          <button type="button" id="printBtn">Print Invoice</button>
-        </div>
-      </form>
-    </section>
-
-    <section class="preview">
-      <div id="invoice" class="invoice">
-        <h1 class="bw" data-static>YOUR BRAND NAME</h1>
-        <h2 class="bw" data-static>123 Shop Address, City - Mobile: 01234567890</h2>
-
-        <div class="meta">
-          <div><span>Date:</span><span id="pDate">-</span></div>
-          <div><span>Invoice #:</span><span id="pInvoice">-</span></div>
-          <div><span>Customer:</span><span id="pCustomer">-</span></div>
-          <div><span>Customer No:</span><span id="pCustomerNo">-</span></div>
-        </div>
-
-        <div class="line"></div>
-
-        <div class="table">
-          <div class="thead">
-            <div>Item</div>
-            <div>Qty</div>
-            <div>Price</div>
-            <div>Total</div>
+          <div class="row">
+            <label for="customerName">Customer Name</label>
+            <input
+              type="text"
+              id="customerName"
+              placeholder="Customer Name"
+              required
+            />
           </div>
-          <div id="pItems" class="tbody"></div>
-          <div class="tfoot">
-            <div>Grand Total</div>
-            <div></div>
-            <div></div>
-            <div id="pGrand">0.00</div>
+          <div class="row">
+            <label for="customerNumber">Customer Number</label>
+            <input type="tel" id="customerNumber" placeholder="01XXXXXXXXX" />
           </div>
+
+          <div class="items">
+            <div class="items-header">
+              <span>Item</span>
+              <span>Qty</span>
+              <span>Price</span>
+              <span>Total</span>
+            </div>
+            <div id="itemRows"></div>
+            <button type="button" id="addItem">Add Item</button>
+          </div>
+
+          <div class="totals">
+            <div class="row small">
+              <label for="grandTotal">Grand Total</label>
+              <input type="text" id="grandTotal" readonly />
+            </div>
+          </div>
+
+          <div class="actions">
+            <button type="button" id="printBtn">Print Invoice</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="preview">
+        <div id="invoice" class="invoice">
+          <h1 class="bw" data-static>NextGen Gadgets Point</h1>
+          <h2 class="bw" data-static>
+            116 South Goran, Khilgaon, <br> Dhaka-1219 <br />
+            Mobile: 01580842338
+          </h2>
+
+          <div class="gap1"></div>
+          <div class="meta">
+            <div><span>Date:</span><span id="pDate">-</span></div>
+            <div><span>Invoice #:</span><span id="pInvoice">-</span></div>
+            <div><span>Customer:</span><span id="pCustomer">-</span></div>
+            <div><span>Customer No:</span><span id="pCustomerNo">-</span></div>
+          </div>
+
+          <div class="gap2"></div>
+          <div class="line"></div>
+
+          <div class="table">
+            <div class="thead">
+              <div>Item</div>
+              <div>Qty</div>
+              <div>Price</div>
+              <div>Total</div>
+            </div>
+            <div id="pItems" class="tbody"></div>
+            <div class="tfoot">
+              <div>Grand Total</div>
+              <div></div>
+              <div></div>
+              <div id="pGrand">0.00</div>
+            </div>
+          </div>
+
+          <div class="line"></div>
+          <div class="gap3"></div>
+          <p class="center">Thank you for your purchase!</p>
         </div>
+      </section>
+    </div>
 
-        <div class="line"></div>
-        <p class="center">Thank you for your purchase!</p>
-      </div>
-    </section>
-  </div>
-
-  <script src="script.js"></script>
-  <script>
-    // Optional: set default date to today
-    const dateInput = document.getElementById('orderDate');
-    if (dateInput && !dateInput.value) {
-      const today = new Date();
-      const yyyy = today.getFullYear();
-      const mm = String(today.getMonth() + 1).padStart(2, '0');
-      const dd = String(today.getDate()).padStart(2, '0');
-      dateInput.value = `${yyyy}-${mm}-${dd}`;
-    }
-  </script>
-</body>
+    <script src="script.js"></script>
+    <script>
+      // Optional: set default date to today
+      const dateInput = document.getElementById("orderDate");
+      if (dateInput && !dateInput.value) {
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, "0");
+        const dd = String(today.getDate()).padStart(2, "0");
+        dateInput.value = `${yyyy}-${mm}-${dd}`;
+      }
+    </script>
+  </body>
 </html>
-

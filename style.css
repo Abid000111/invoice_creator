@@ -63,8 +63,16 @@ body { font-family: var(--font-family); color: #000; background: #fff; }
     margin-bottom: 50px;
 }
 
-.gap{
-    margin-top: 42px;
+.gap1{
+    height: 10px;
+}
+
+.gap2{
+  height: 13px;
+}
+
+.gap3{
+  height: 20px;
 }
 
 
